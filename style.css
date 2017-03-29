@@ -1,0 +1,126 @@
+@font-face {
+    font-family: Graphik-Light;
+    src: url(fonts/Graphik-Light.otf);
+}
+@font-face {
+    font-family: Graphik-Regular;
+    src: url(fonts/Graphik-Regular.otf);
+}
+
+body { 
+    font-family: graphik-Light;
+}
+
+header {
+    margin: 3%;
+    display: flex;
+    align-items: start;
+}
+
+.nav {
+    -webkit-margin-before: 0.83em;
+    font-size: 2em;
+    /* position: fixed;*/
+    position: relative;
+    padding-left: 1.25em;
+    float: right;
+    width: 30%;
+}
+.nav:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0.25em;
+    width: 1em;
+    height: 0.10em;
+    background: black;
+    box-shadow: 
+        0 0.70em 0 0 black,
+        0 0.35em 0 0 black;
+}
+
+article {
+    width: 100%;
+    padding: 10% 0;
+}
+
+aside {
+    flex: 1 auto;
+}
+
+section {
+    width: 60%;
+    font-family: graphik-Regular;
+    font-size: 15pt;
+}
+
+section.large { width: 85%; }
+section.small { width: 45%; }
+section img { width: 100%; }
+section.left { margin: 0 0 0 6.25%; }
+section.right { float: right; margin: 0 6.25% 0 0; }
+section.center { margin: 0 auto; }
+
+section a {
+    color: blue;
+    border-bottom: 2px solid blue;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+}
+
+.v a { color: #d0d0d0; text-decoration: none; }
+.vleft {
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    position: fixed;
+    top: 50%;
+    left: -5px;
+    margin-top: 0;
+}
+
+.vright {
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    position: fixed;
+    top: 50%;
+    right: -5px;
+    margin-top: 0px;
+}
+
+.fruit-label {
+    position: relative;
+}
+.one { left: 50%; top: -40px; width: 90px; }
+.two { left: 30%; top: 150px; width: 100px;  }
+.three { left: 80%; width: 120px; }
+.four { left: 10%; top: 50px; width: 150px; z-index: 9999; }
+.five { left: 85%; top: 100px; width: 100px; }
+.six { left: 15%; top: 50px; width: 150px; z-index: 9999; }
+
+.fruit-label img { 
+    width: 100%;
+}
+
+p {
+    text-align: center;
+}
+
+.clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+
+
+
+
