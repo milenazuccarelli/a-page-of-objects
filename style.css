@@ -1,5 +1,5 @@
 @font-face {
-    font-family: Graphik-Light;
+    font-family: Graphik-re;
     src: url(fonts/Graphik-Light.otf);
 }
 @font-face {
@@ -8,7 +8,7 @@
 }
 
 body { 
-    font-family: graphik-Light;
+    font-family: graphik-Regular;
 }
 
 header {
@@ -32,7 +32,7 @@ header {
     right: 0;
     top: 0.25em;
     width: 1em;
-    height: 0.10em;
+    height: 0.05em;
     background: black;
     box-shadow: 
         0 0.70em 0 0 black,
@@ -50,8 +50,8 @@ aside {
 
 section {
     width: 60%;
-    font-family: graphik-Regular;
     font-size: 15pt;
+    max-width: 1000px;
 }
 
 section.large { width: 85%; }
@@ -96,13 +96,15 @@ footer {
 
 .fruit-label {
     position: relative;
+    z-index: 9999;
 }
 .one { left: 50%; top: -40px; width: 90px; }
 .two { left: 30%; top: 150px; width: 100px;  }
 .three { left: 80%; width: 120px; }
-.four { left: 10%; top: 50px; width: 150px; z-index: 9999; }
+.four { left: 10%; top: 50px; width: 150px;  }
 .five { left: 85%; top: 100px; width: 100px; }
-.six { left: 15%; top: 50px; width: 150px; z-index: 9999; }
+.six { left: 15%; top: 50px; width: 150px; }
+.seven { left: 65%; top: 150px; width: 100px;  }
 
 .fruit-label img { 
     width: 100%;
@@ -112,15 +114,83 @@ p {
     text-align: center;
 }
 
+.page p {
+   width: 50%;
+    margin: 0 auto;
+    padding: 4% 0;
+    font: 1.5em/1.5em Graphik-Regular;
+}
+.foot p {
+     width: 65%;
+    margin: 0 auto;
+    padding: 4% 0 0 0;
+    font: 1.5em/1.5em Graphik-Regular;  
+    
+}
+.page h1 {
+    font: 1.5em/1.5em Graphik-Regular;
+}
+
+h1 {
+    line-height: 1.5em;
+}
+
 .clear:after {
     content: "";
     display: table;
     clear: both;
 }
 
+.grid-wrap{
+  display: -ms-flexbox;    
+  display: -webkit-box;    
+  display: -webkit-flexbox; 
+  display: -webkit-flex;
+
+}    
+
+.grid-wrap.vertical { margin: -20px auto 0 auto;   display: flex;  }
+.grid-wrap > * { margin: 0 0 0 20px; }
+.grid-wrap.vertical > * { margin: 20px 0 -20px -20px; }
+
+.vertical{
+      -webkit-box-orient: vertical;    
+         -moz-box-orient: vertical;    
+              box-orient: vertical;    
+  -webkit-flex-direction: column;
+     -moz-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;      
+}
+
+.grid-item{
+  flex: auto;
+  min-height: 100px;
+}
 
 
+.grid-item img {
+    width: 100%;
+}
+
+a { color: #222; }
+a.img-a { border: 0; cursor: pointer; }
 
 
+		img {
+			display: block;
+			border: 0;
+			opacity: 0;
+			transition: opacity 1s;
+		}
+		img.loaded,
+		img.error {
+			opacity: 1;
+		}
+		img:not([src]) {
+			visibility: hidden;
+		}
 
-
+.fruit-label img {
+    opacity: 1;  
+}
