@@ -1,3 +1,5 @@
+if( $window.width() > 800){
+
 $.fn.moveIt = function(){
   var $window = $(window);
   var instances = [];
@@ -35,3 +37,4 @@ var theta = $(window).scrollTop() / 20 % Math.PI;
 $('.spin').css({ transform: 'rotate(' + theta + 'rad)' });
 $('.spin-reverse').css({ transform: 'rotate(-' + theta + 'rad)' });
 });
+}

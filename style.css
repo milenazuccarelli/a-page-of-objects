@@ -60,6 +60,7 @@ section img { width: 100%; }
 section.left { margin: 0 0 0 6.25%; }
 section.right { float: right; margin: 0 6.25% 0 0; }
 section.center { margin: 0 auto; }
+section.page { width: 75%; }
 
 section a {
     color: blue;
@@ -115,10 +116,15 @@ p {
 }
 
 .page p {
-   width: 50%;
+   width: 70%;
     margin: 0 auto;
     padding: 4% 0;
     font: 1.5em/1.5em Graphik-Regular;
+}
+
+.foot {
+    margin-top:-340px;
+    margin-bottom: -5%;
 }
 .foot p {
      width: 65%;
@@ -172,7 +178,7 @@ h1 {
 .grid-item img {
     width: 100%;
 }
-
+section p { line-height: 1.7em; }
 a { color: #222; }
 a.img-a { border: 0; cursor: pointer; }
 
@@ -193,4 +199,34 @@ a.img-a { border: 0; cursor: pointer; }
 
 .fruit-label img {
     opacity: 1;  
+}
+
+h1 a { text-decoration: none; }
+.menu { text-align: right; margin-top: 3em; }
+
+
+
+/* media queries */
+
+@media screen and (max-width: 1000px) {
+    .foot {
+            margin-top:-12em;
+    }
+}
+@media screen and (max-width: 660px) {
+    section {
+        width: 80%;
+        margin: 0 auto;
+        float: none;
+    }
+    section.right, section.left, section.center { margin: 0 auto; float: none; }
+    
+    .foot {
+            margin-top: 30%;
+    }
+    .foot p, .page p { font-size: 1.2em; width: 80%; word-wrap:break-word; }
+    .page p { margin-top: 10%; }
+    .fruit-label { display: none; }
+    .vleft { left: -15px; }
+    .vright { right: -20px; }
 }
