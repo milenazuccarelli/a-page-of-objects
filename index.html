@@ -1,106 +1,32 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <head>
-    <title>A page of objects</title>
+    <title>Seguimi</title>
 
     <link rel="stylesheet" href="style.css" type="text/css" media="all">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="scroll.js"></script>
+    <!-- adapted from Andrew Mollica’s Block 90ff1d55f7a8fdbf42500558e1c6d1f5! --> 
 </head>
 <body>
-    <div class="v vleft"><a href="about/index.html">contact</a></div>
-    <div class="v vright"><a href="about/index.html">about me</a></div>
-    <header class="clear">
-        <aside  data-scroll-speed="2">
-            <h1 class="logo">
-                <a href="/">a page of<br>
-                    objects</a>
-            </h1>   
-            <div class="fruit-label one">
-                <img src="img/1.png">
-            </div>
-        </aside>
+    
+<span><u>drag</u> to take some text for a walk — no fresh air, just fresh fonts</span>
+    
+<input type="text" id="letters" value="my name is milena (miles for short). i’m an interaction design student at the glasgow school of art, currently studying on exchange in linz, austria . I’m interested in interactive experiences, website and graphic design. ">
+    
+<script>
+// where the magic happens
+function changeLetters(){letters=input.node().value,text.text(letters)}function dragStarted(){var t=d3.event.subject,e=d3.event.x,a=d3.event.y;path.datum(t),textPath.datum(t),d3.event.on("drag",function(){var n=d3.event.x,c=d3.event.y,r=n-e,d=c-a;r*r+d*d>100?t.push([e=n,a=c]):t[t.length-1]=[n,c],textPath.attr("d",line),path.attr("d",line)})}function getStartingPath(){return"M432.7,142.9c-12.7,8.1-150.9,97.3-184.4,194c-13.4,38.7-25.7,74.2-3.5,107c9.4,13.9,21.8,22.5,17.6,32.1 c-7.8,17.7-68.7,29.6-108.9,16.1C45.7,455.6,113,244.9,93.6,117.4c-1.3-8.4-5.6-34.2,12.3-44.1c13.2-7.3,32.8-2.8,43.9,0 c93.4,23.5,130.2,62.6,189.7,66.9c27.5,2,24.1-6.1,103.6-25.4C535,92.5,615.8,72.8,657.5,97.4c15.6,9.2,27.4,25.4,28.1,97.7 c1.2,126.3-33.8,197.6-21.1,315.7c6,56.1,17.6,73.9,33.4,77.6c23.5,5.5,53.4-20.7,110.7-70.9c40.6-35.5,61-53.8,66.7-76.2 c8.8-34.2-15.2-41-14.1-84.3c0.3-9.3,3.1-71.1,61.5-104.3c22.8-13,65.3-28,86.1-16.1c22.8,13.1-4.7,44.5,24.6,80.3 c18.4,22.5,46.4,31.1,54.5,33.4c12.3,3.6,34.6,10.2,49.2,2.7c14.5-7.4,9.2-22.4,14.1-48.2c10.1-53.6,49.1-74.6,33.4-93.6 c-6.7-8.1-14.2-4.9-33.4-13.4c-50.5-22.3-44-64.4-80.8-78.9c-26.6-10.5-57.6,4-82.6,8C915.6,138.5,581.5,383,556.5,487.6"}var width=1,height=1,line=d3.line().curve(d3.curveBasis),input=d3.select("input").on("input",changeLetters),letters=input.node().value,startingPath=getStartingPath(),svg=d3.select("body").append("svg").attr("width",width).attr("height",height).call(d3.drag().container(function(t){return this}).subject(function(t){var e=[d3.event.x,d3.event.y];return[e,e]}).on("start",dragStarted)),textPath=svg.append("defs").append("path").attr("id","textPath").attr("d",startingPath),path=svg.append("path").attr("d",startingPath),text=svg.append("text").append("textPath").attr("xlink:href","#textPath").text(letters);
+</script>
+<script>
+// dem sweet stats
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        <aside class="menu">
-            <!--<div class="nav"></div>-->
-        </aside>
-    </header>
-
-    <article class="clear" data-scroll-speed="5">
-        <section class="right">
-            <a href="arriere-garde/index.html" class="img-a"><img src="img/arriere-garde-p.jpg"  data-original="img/arriere-garde.png" alt="" data-aspect="1.2415" style="max-width:100%"></a>
-            <p><a href="arriere-garde/index.html">arrière &mdash; garde</a></p>
-        </section>
-
-        <div class="fruit-label two"  data-scroll-speed="6">
-            <img src="img/2.png" alt class="spin">
-        </div>
-    </article>
-
-    <div class="fruit-label three" data-scroll-speed="1">
-        <img src="img/3.png">
-    </div>
-
-    <article>
-        <div class="fruit-label four">
-            <img src="img/4.png">
-        </div>
-
-        <section class="left" data-scroll-speed="3">
-            <a href="structures/index.html" class="img-a"><img src="img/structures-p.jpg" data-original="img/structures.png" alt="" data-aspect="0.7994" style="max-width:100%"></a>
-            <p><a href="structures/index.html">no more structure</a></p>
-        </section>
-
-    </article>
-
-    <div class="fruit-label five" data-scroll-speed="1">
-        <img src="img/5.png"  alt class="spin-reverse">
-    </div>
-
-    <article>
-        <div class="fruit-label six">
-            <img src="img/6.png">
-        </div>
-
-        <section class="center" data-scroll-speed="2">
-            <a href="marco/index.html" class="img-a"><img src="img/marco-p.jpg" data-original="img/marco-large.gif" alt="" data-aspect="1.6105" style="max-width:100%"></a>
-            <p><a href="marco/index.html">marco troisi</a></p>
-        </section>
-    </article>
-
-    <article>
-        <section class="right" data-scroll-speed="4">
-            <a href="VR/index.html" class="img-a"><img src="img/vr.jpg" data-original="img/vr.png" alt="" data-aspect="1.4626" style="max-width:100%"></a>
-            <p><a href="VR/index.html">VR soundscape</a></p>
-        </section>
-    </article>
-
-    <article>
-        <div class="fruit-label seven">
-            <img src="img/2.png" alt class="spin-reverse" >
-        </div>
-        <section class="left" data-scroll-speed="9">
-            <a href="contemporary-poetry/index.html" class="img-a"><img src="img/cp4-p.jpg" data-original="img/cp4.jpg" alt="" data-aspect="1.2836" style="max-width:100%"></a>
-            <p><a href="contemporary-poetry/index.html">how contemporary poetry<br>is made</a></p>
-            <div class="fruit-label two" data-scroll-speed="4">
-                <img src="img/1.png">
-            </div>
-
-        </section>
-
-        <div class="foot">
-            <p>
-                I'm Milena Zuccarelli, a graphic and web designer based in Glasgow, Scotland. Currently studying Interaction Design at the Glasgow School of Art.
-            </p>
-        </div>
-    </article>
-
-    <!--
-    <footer>
-    <h1>Have a nice day</h1>
-    </footer>
-    -->
-
-    <script src="lazyload.js"></script>
+ga('create', 'UA-104287201-2', 'auto');
+ga('send', 'pageview');
+</script>
 </body>
 </html>
