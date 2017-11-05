@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'FoundersGroteskText-Medium';
+    src: url('assets/foundersgrotesktext-medium.eot');
+    src: url('assets/foundersgrotesktext-medium.eot?#iefix') format('embedded-opentype'),
+         url('assets/foundersgrotesktext-medium.woff') format('woff'),
+         url('assets/foundersgrotesktext-medium.ttf') format('truetype'),
+         url('assets/foundersgrotesktext-medium.svg#FoundersGroteskText-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body { margin: 0; }
 
 #letters {
