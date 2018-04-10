@@ -1,1 +1,43 @@
-@font-face{font-family:koolfont;src:url(assets/AktivGroteskExTrial-Medium.woff2) format('woff2'),url(assets/AktivGroteskExTrial-Medium.woff) format('woff');font-weight:500;font-style:normal}body{font:400 16px/1.5 koolfont,Arial,sans-serif;margin:0;color:#fff}.float{position:absolute!important;z-index:999;top:1em;right:0;height:50vh;width:50vh;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);transform:rotate(90deg);-webkit-transform-origin:25vh 25vh;-moz-transform-origin:25vh 25vh;transform-origin:25vh 25vh}h1{font-size:1em;font-weight:inherit;display:inline-block;margin:1.2em}.a-enter-vr-button{visibility:hidden}.aframe-injected{position:relative;z-index:999}
+@font-face {
+    font-family: 'koolfont';
+    src: url('assets/AktivGroteskExTrial-Medium.woff2') format('woff2'),
+        url('assets/AktivGroteskExTrial-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    font: normal 16px/1.5 'koolfont', 'Arial', sans-serif;
+    margin: 0;
+    color: white;
+  }
+
+.float {
+    position: absolute !important;
+    z-index: 999; 
+    top: 1em; 
+    right: 0px;
+    height: 50vh;
+    width: 50vh;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: 25vh 25vh;
+    -moz-transform-origin: 25vh 25vh;
+    transform-origin: 25vh 25vh;
+  }
+
+  h1 {
+    font-size: 1em;
+    font-weight: inherit;
+    display: inline-block;
+    margin: 1.2em;
+  }
+  .a-enter-vr-button {
+    visibility: hidden;
+  }
+
+  .aframe-injected {
+    position: relative;
+    z-index: 999;
+  }

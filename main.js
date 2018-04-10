@@ -1,1 +1,71 @@
-let planes=8;preloadImages=()=>{const a=document.querySelector('a-assets');let b=[];for(i=1;i<planes;i++)b[i]=document.createElement('img'),b[i].setAttribute('id','cloud'+i),b[i].setAttribute('src','assets/'+i+'-min.jpg'),a.appendChild(b[i])},preloadImages(),randomPosition=()=>{let a={},b=20,c=-20,d=Math.floor(Math.random()*(b-c+1))+c,e=Math.floor(Math.random()*(b-c+1))+c,f=Math.floor(Math.random()*(b-c+1))+c;return a.x=d,a.y=e,a.z=f,a},randomPosition(),randomRotation=()=>{let a={},b=180,c=45,d=Math.floor(Math.random()*(b-c+1)+c),e=Math.floor(Math.random()*(b-c+1)+c),f=Math.floor(Math.random()*(b-c+1)+c);return a.x=d,a.y=e,a.z=f,a},randomRotation(),populateSky=()=>{const a=document.querySelector('a-scene');for(i=1;i<planes;i++){let b=randomPosition(),c=randomRotation();image=document.createElement('a-image'),image.setAttribute('src','#cloud'+i),image.setAttribute('position',b),image.setAttribute('rotation',c),image.setAttribute('scale','17 17 17'),a.appendChild(image)}},populateSky(),populateSky(),populateSky();
+let planes = 8;
+
+preloadImages = () => {
+    const assets = document.querySelector('a-assets');
+    let images = [];
+
+    for (i = 1; i < planes; i++) {
+        images[i] = document.createElement('img');
+        images[i].setAttribute('id', 'cloud' + i);
+        images[i].setAttribute('src', 'assets/' + i + '-min.jpg');
+        
+        assets.appendChild(images[i]);
+    }    
+}
+preloadImages();
+
+randomPosition = () => {
+    let numbers = {};
+    let max = 20;
+    let min = -20;
+    let x = Math.floor(Math.random() * (max - min + 1)) + min;
+    let y = Math.floor(Math.random() * (max - min + 1)) + min;
+    let z = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    numbers.x = x;
+    numbers.y = y;
+    numbers.z = z;
+
+    return numbers;
+}
+randomPosition();
+
+randomRotation = () => {
+    let numbers = {};
+    let max = 180;
+    let min = 45;
+    let x = Math.floor(Math.random() * (max - min + 1) + min);
+    let y = Math.floor(Math.random() * (max - min + 1) + min);
+    let z = Math.floor(Math.random() * (max - min + 1) + min);
+
+    numbers.x = x;
+    numbers.y = y;
+    numbers.z = z;
+
+    return numbers;
+}
+randomRotation();
+
+populateSky = () => {
+    const sky = document.querySelector('a-scene');
+    // let images = [];
+
+    for (i = 1; i < planes; i++) {
+        let positionArray = randomPosition();
+        let rotationArray = randomRotation();
+
+        image = document.createElement('a-image');
+        image.setAttribute('src', '#cloud' + i);
+        image.setAttribute('position', positionArray);
+        image.setAttribute('rotation', rotationArray);
+        image.setAttribute('scale', '17 17 17')
+
+        // console.log(positionArray);
+        // console.log(image);
+
+        sky.appendChild(image);
+    }
+}
+populateSky();
+populateSky();
+populateSky();
