@@ -7,7 +7,7 @@ preloadImages = () => {
     for (i = 1; i < planes; i++) {
         images[i] = document.createElement('img');
         images[i].setAttribute('id', 'cloud' + i);
-        images[i].setAttribute('src', 'assets/' + i + '-min.jpg');
+        images[i].setAttribute('src', 'assets/' + i + '.jpg');
         
         assets.appendChild(images[i]);
     }    
