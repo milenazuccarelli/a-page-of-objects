@@ -69,3 +69,16 @@ populateSky = () => {
 populateSky();
 populateSky();
 populateSky();
+
+menuFunction = (x) => {
+    x.classList.toggle("change");
+    var element = document.getElementById("overlay");
+    element.classList.toggle("display");
+}
+
+closeFunction = () => {
+    var element = document.getElementById("overlay");
+    element.classList.toggle("display");
+    var el = document.getElementById("container");
+    el.classList.remove("change");
+}
