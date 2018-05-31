@@ -18,14 +18,14 @@ body {
   position: absolute !important;
   z-index: 999; 
   right: 0px;
-  height: 50vh;
-  width: 50vh;
+  height: 25vh;
+  width: 25vh;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   transform: rotate(90deg);
-  -webkit-transform-origin: 25vh 25vh;
-  -moz-transform-origin: 25vh 25vh;
-  transform-origin: 25vh 25vh;
+  -webkit-transform-origin: 12.5vh 12.5vh;
+  -moz-transform-origin: 12.5vh 12.5vh;
+  transform-origin: 12.5vh 12.5vh;
 }
 
 .instructions {
@@ -35,7 +35,6 @@ body {
 .about {
   bottom: 1em; 
   text-align: right;
-  z-index: 1 !important;
 }
 
 h1 {
@@ -113,15 +112,15 @@ a {
   padding-left: 2em;
 }
 
-
 .displaybar {
   background-color: #a8a8a8 !important;
 }
 
 #overlay h1 {
+  font-family: Zapfino, 'Tangerine', cursive;
+  font-size: 1.5em;
   color: white;
   text-shadow: 0 0 3px #FF0000;
-  font-family: Zapfino, 'Tangerine', cursive;
 }
 
 #overlay p {
@@ -139,18 +138,20 @@ a {
 }
 
 @media screen and (max-width: 620px) {
-
   #overlay {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
+  #overlay h1 {
+    font-size: 1em;
+  }
+
   .overlay-contain {
     flex-wrap: wrap;
     height: 70%;
   }
-
   
   .image, .about {
     flex: none;
@@ -159,6 +160,4 @@ a {
   .image {
     width: 80%;
   }
-
-
 }
